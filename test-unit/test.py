@@ -36,7 +36,7 @@ class TestSolutionInputBad(unittest.TestCase):
 
     def test_keyerror_big_list_case(self):
         with self.assertRaises(KeyError):
-            Solution.can_partition([1] * 10 ** 100)
+            Solution.can_partition([1] * 101)
 
     def test_keyerror_array_empty_list_case(self):
         with self.assertRaises(KeyError):
