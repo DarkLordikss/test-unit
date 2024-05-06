@@ -7,6 +7,10 @@ class Solution:
         if len(nums) < 1 or len(nums) > 100:
             raise KeyError
 
+        for num in nums:
+            if num < 1 or num > 100:
+                raise KeyError
+
         if sum(nums) % 2:
             return False
 

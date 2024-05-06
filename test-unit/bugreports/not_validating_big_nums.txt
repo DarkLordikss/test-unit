@@ -1,3 +1,5 @@
+---CLOSED---
+
 Severity: Lowest
 Priority: Lowest
 Reproducibility: Always
