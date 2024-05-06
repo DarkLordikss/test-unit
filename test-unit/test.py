@@ -47,5 +47,5 @@ class TestSolutionInputBad(unittest.TestCase):
             Solution.can_partition([0, 0])
 
     def test_typeerror_array_float_nums_case(self):
-        with self.assertRaises(KeyError):
+        with self.assertRaises(TypeError):
             Solution.can_partition([2.1, 3.9, 6])
