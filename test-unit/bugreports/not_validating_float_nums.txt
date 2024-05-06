@@ -13,4 +13,4 @@ Actual Result:
 Returns True
 
 Expected Result:
-Raises KeyError
+Raises TypeError
