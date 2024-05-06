@@ -4,6 +4,9 @@ from typing import List
 class Solution:
     @staticmethod
     def can_partition(nums: List[int]) -> bool:
+        if len(nums) < 1 or len(nums) > 100:
+            raise KeyError
+
         if sum(nums) % 2:
             return False
 
