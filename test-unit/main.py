@@ -8,6 +8,8 @@ class Solution:
             raise KeyError
 
         for num in nums:
+            if not isinstance(num, int):
+                raise TypeError
             if num < 1 or num > 100:
                 raise KeyError
 
