@@ -2,7 +2,7 @@ import unittest
 from main import Solution
 
 
-class TestSolutionNums(unittest.TestCase):
+class TestSolutionInputOk(unittest.TestCase):
     def test_true_array_casual_case(self):
         self.assertEqual(Solution.can_partition([1, 5, 11, 5]), True)
         self.assertEqual(Solution.can_partition([1, 2, 3, 4, 5, 6, 7]), True)
@@ -10,6 +10,9 @@ class TestSolutionNums(unittest.TestCase):
     def test_false_array_casual_case(self):
         self.assertEqual(Solution.can_partition([1, 2, 3, 5]), False)
         self.assertEqual(Solution.can_partition([1, 2, 3, 4, 5, 6]), False)
+
+    def test_false_array_empty_list_case(self):
+        self.assertEqual(Solution.can_partition([]), False)
 
     def test_true_array_single_element_case(self):
         self.assertEqual(Solution.can_partition([0]), True)
@@ -39,26 +42,20 @@ class TestSolutionNums(unittest.TestCase):
     def test_false_array_float_nums_case(self):
         self.assertEqual(Solution.can_partition([1.23, 23, 2.3]), False)
 
-    def test_true_big_nums_list_case(self):
-        self.assertEqual(Solution.can_partition([1]*10**100), True)
 
-    def test_false_big_nums_list_case(self):
-        self.assertEqual(Solution.can_partition([1]*10**101), False)
+class TestSolutionInputBad(unittest.TestCase):
+    def test_typeerror_not_list_case(self):
+        with self.assertRaises(TypeError):
+            Solution.can_partition('test')
 
+    def test_typeerror_not_list_of_nums_case(self):
+        with self.assertRaises(TypeError):
+            Solution.can_partition([1, 'a', 3])
 
-class TestSolutionNotNums(unittest.TestCase):
-    def test_false_array_empty_list_case(self):
-        self.assertEqual(Solution.can_partition([]), False)
+    def test_keyerror_big_nums_case(self):
+        with self.assertRaises(KeyError):
+            Solution.can_partition([1] * 10 ** 100)
 
-    class TestSolutionNotNums(unittest.TestCase):
-        def test_false_array_empty_list_case(self):
-            with self.assertRaises(TypeError):
-                Solution.can_partition([])
-
-        def test_typeerror_not_list_case(self):
-            with self.assertRaises(TypeError):
-                Solution.can_partition('test')
-
-        def test_typeerror_not_list_of_nums_case(self):
-            with self.assertRaises(TypeError):
-                Solution.can_partition([1, 'a', 3])
+    def test_keyerror_big_list_case(self):
+        with self.assertRaises(KeyError):
+            Solution.can_partition([1] * 10 ** 100)
