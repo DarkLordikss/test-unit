@@ -6,7 +6,7 @@ Environment: Any
 Preconditions: None
 
 Steps to Reproduce:
-1. Attempt to call Solution.can_partition with [1] * 10 ** 100.
+1. Attempt to call Solution.can_partition with [1] * 101.
 2. Run the code.
 
 Actual Result:
