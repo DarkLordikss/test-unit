@@ -1,0 +1,16 @@
+Severity: Lowest
+Priority: Lowest
+Reproducibility: Always
+Environment: Any
+
+Preconditions: None
+
+Steps to Reproduce:
+1. Attempt to call Solution.can_partition with [].
+2. Run the code.
+
+Actual Result:
+Returns False
+
+Expected Result:
+Raises KeyError
